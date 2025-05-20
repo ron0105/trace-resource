@@ -10,6 +10,7 @@ import { FileText, Plus, Upload, Check, AlertTriangle } from "lucide-react";
 
 const DeveloperDashboard = () => {
   const [showWelcome, setShowWelcome] = useState(true);
+  const [showAddProjectDialog, setShowAddProjectDialog] = useState(false);
   
   // Mock project data
   const recentProjects = [
@@ -121,12 +122,35 @@ const DeveloperDashboard = () => {
         <TabsContent value="projects" className="space-y-4">
           <div className="flex justify-between items-center">
             <h2 className="dash-section-title">Recent Projects</h2>
-            <DialogTrigger asChild>
-              <Button>
-                <Plus className="mr-2 h-4 w-4" />
-                Add Project
-              </Button>
-            </DialogTrigger>
+            
+            {/* Add proper Dialog wrapper around DialogTrigger */}
+            <Dialog open={showAddProjectDialog} onOpenChange={setShowAddProjectDialog}>
+              <DialogTrigger asChild>
+                <Button>
+                  <Plus className="mr-2 h-4 w-4" />
+                  Add Project
+                </Button>
+              </DialogTrigger>
+              
+              <DialogContent>
+                <DialogHeader>
+                  <DialogTitle>Add New Project</DialogTitle>
+                  <DialogDescription>
+                    Enter project details to create a new sustainability compliance project.
+                  </DialogDescription>
+                </DialogHeader>
+                <div className="py-4">
+                  {/* Form content would go here */}
+                  <p className="text-center py-4 text-muted-foreground">
+                    Project form fields will appear here
+                  </p>
+                </div>
+                <DialogFooter>
+                  <Button variant="outline" onClick={() => setShowAddProjectDialog(false)}>Cancel</Button>
+                  <Button onClick={() => setShowAddProjectDialog(false)}>Create Project</Button>
+                </DialogFooter>
+              </DialogContent>
+            </Dialog>
           </div>
           
           <div className="grid gap-4">
