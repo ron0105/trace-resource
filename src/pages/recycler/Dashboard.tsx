@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import MainLayout from '@/components/layout/MainLayout';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -7,7 +8,7 @@ import { Progress } from "@/components/ui/progress";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer } from 'recharts';
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { Package, ShoppingBag, AlertCircle, Check } from "lucide-react";
+import { Package, ShoppingBag, AlertCircle, Check, FileText } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 
 // Mock sales data
@@ -116,6 +117,16 @@ const RecyclerDashboard = () => {
 
   return (
     <MainLayout pageTitle="Vendor Dashboard">
+      {/* Action Links */}
+      <div className="flex gap-4 mb-6">
+        <Link to="/recycler/dashboard">
+          <Button variant="outline">Dashboard</Button>
+        </Link>
+        <Link to="/recycler/listings">
+          <Button>Manage Listings</Button>
+        </Link>
+      </div>
+
       {/* Stats Overview */}
       <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4 mb-6">
         <Card>
