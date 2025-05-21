@@ -45,6 +45,7 @@ import AdminUsers from "./pages/admin/Users";
 // Recycler Routes
 import RecyclerDashboard from "./pages/recycler/Dashboard";
 import ProductListings from "./pages/recycler/ProductListings";
+import RecyclerOrders from "./pages/recycler/Orders";
 
 const queryClient = new QueryClient();
 
@@ -95,6 +96,7 @@ const App = () => (
           {/* Recycler Routes */}
           <Route path="/recycler/dashboard" element={<RecyclerDashboard />} />
           <Route path="/recycler/listings" element={<ProductListings />} />
+          <Route path="/recycler/orders" element={<RecyclerOrders />} />
           
           {/* Landing and Not Found Routes */}
           <Route path="/" element={<Index />} />
