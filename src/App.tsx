@@ -38,6 +38,9 @@ import DownloadCenter from "./pages/developer/reporting/DownloadCenter";
 
 // Admin Routes
 import AdminDashboard from "./pages/admin/Dashboard";
+import AdminCompliance from "./pages/admin/Compliance";
+import AdminReports from "./pages/admin/Reports";
+import AdminUsers from "./pages/admin/Users";
 
 // Recycler Routes
 import RecyclerDashboard from "./pages/recycler/Dashboard";
@@ -84,6 +87,9 @@ const App = () => (
           
           {/* Admin Routes */}
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/compliance" element={<AdminCompliance />} />
+          <Route path="/admin/reports" element={<AdminReports />} />
+          <Route path="/admin/users" element={<AdminUsers />} />
           
           {/* Recycler Routes */}
           <Route path="/recycler/dashboard" element={<RecyclerDashboard />} />
